@@ -1,16 +1,10 @@
 # http-server
 
-To install dependencies:
+SSRF server
 
 ```bash
-bun install
+Accepts incoming requests 
 ```
 
-To run:
-
-```bash
-bun run index.ts
-```
-
-This project was created using `bun init` in bun v1.2.22. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+A runtime SSRF server hosted on vercel to test SSRF connections. For now it only accepts requests and responds with a 200  
 # ssrf-http-server
