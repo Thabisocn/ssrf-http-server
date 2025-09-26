@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "nodemon src/app.ts",
-    "add-build": "git add dist"
+    "build": "tsc"
   },
 
   "peerDependencies": {
@@ -19,11 +19,6 @@
     "@types/node": "^24.5.2",
     "express": "^5.1.0",
     "ts-node": "^10.9.2"
-  },
+  }
 
-  "pre-commit": [
-    "ts-check",
-    "build",
-    "add-build"
-  ]
 }
