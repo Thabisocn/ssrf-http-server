@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "outputDirectory": "dist",
-  "functions": {
-    "src/app.ts": {}
-  }
+  "builds": [
+    {
+      "src": "src/app.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/app.ts"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "dist/app.ts"
+    }
+  ]
 }
-
