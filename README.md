@@ -4,7 +4,10 @@ SSRF server
 
 To avoid always spwaning a local instance 
 
-Port problems 
+# Problem
+```bash
+Runs well on a local machine .When hosting  we have a compiling problem where our Typescript is not being compiled our  PAAS
+```
 
 Port:5000
 
