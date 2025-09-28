@@ -13,7 +13,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "dist/app.js"
+      "dest": "src/app.ts"
     }
   ]
 }
