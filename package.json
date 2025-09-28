@@ -7,7 +7,7 @@
     "bun-vercel": "^1.0.0-alpha.4"
   },
   "scripts": {
-    "build": "bun-vercel /src/app.ts"
+    "dev": "bun run src/app.ts"
   },
 
   "peerDependencies": {
