@@ -7,7 +7,27 @@ async fetch(request: Request, server: Server) {
     text += `\nurl: ${request.url}\n`
 
     for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("x-vercel","Referer","origin","User","Cookie")) continue
+      if (!key.startsWith("x-vercel")) continue
+      text += `\n${key}: ${value}`
+    }
+
+ for (const [key, value] of request.headers.entries()) {
+      if (!key.startsWith("Referer")) continue
+      text += `\n${key}: ${value}`
+    }
+
+ for (const [key, value] of request.headers.entries()) {
+      if (!key.startsWith("origin")) continue
+      text += `\n${key}: ${value}`
+    }
+
+ for (const [key, value] of request.headers.entries()) {
+      if (!key.startsWith("User")) continue
+      text += `\n${key}: ${value}`
+    }
+
+ for (const [key, value] of request.headers.entries()) {
+      if (!key.startsWith("Cookie")) continue
       text += `\n${key}: ${value}`
     }
 
