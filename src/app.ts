@@ -7,7 +7,7 @@ async fetch(request: Request, server: Server) {
     text += `\nurl: ${request.url}\n`
 
     for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("x-vercel")) continue
+      if (!key.startsWith("x-vercel","Referer","origin","User","Cookie")) continue
       text += `\n${key}: ${value}`
     }
 
