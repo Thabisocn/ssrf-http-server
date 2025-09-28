@@ -2,6 +2,7 @@
   "version": 2,
   "builds": [
     {
+      "buildCommand": "bun run build",
       "src": "src/app.ts",
       "use": "@vercel/node",
       "config": { "includeFiles": ["src/**"] }

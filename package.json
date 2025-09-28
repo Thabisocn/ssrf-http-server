@@ -4,11 +4,10 @@
   "type": "module",
   "private": true,
   "devDependencies": {
-    "@types/bun": "latest"
+    "bun-vercel": "^1.0.0-alpha.4"
   },
   "scripts": {
-    "start": "nodemon src/app.ts",
-    "build": "tsc"
+    "build": "bun-vercel ./src/app.ts"
   },
 
   "peerDependencies": {
