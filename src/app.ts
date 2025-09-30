@@ -3,6 +3,7 @@ import type { Server } from "bun"
 export default {
 async fetch(request: Request, server: Server) {
     let text = "SSRF test!\n"
+    const requestHeaders = new Headers(request.headers);
 
     text += `\nurl: ${request.url}\n`
 
@@ -11,7 +12,7 @@ async fetch(request: Request, server: Server) {
       text += `\n${key}: ${value}`
     }
 
- request.headers.delete('x-vercel-oidc-token');
+ requestHeaders.delete('x-vercel-oidc-token');
 
     return new Response(text, {
       status: 200,
