@@ -11,25 +11,7 @@ async fetch(request: Request, server: Server) {
       text += `\n${key}: ${value}`
     }
 
- for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("Referer")) continue
-      text += `\n${key}: ${value}`
-    }
-
- for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("origin")) continue
-      text += `\n${key}: ${value}`
-    }
-
- for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("User")) continue
-      text += `\n${key}: ${value}`
-    }
-
- for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("Cookie")) continue
-      text += `\n${key}: ${value}`
-    }
+ request.headers.delete('x-vercel-oidc-token');
 
     return new Response(text, {
       status: 200,
