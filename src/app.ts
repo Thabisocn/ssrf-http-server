@@ -8,16 +8,14 @@ async fetch(request: Request, server: Server) {
     text += `\nurl: ${request.url}\n`
 
     for (const [key, value] of request.headers.entries()) {
-      if (!key.startsWith("x-vercel")) continue
+      if (!key.startsWith("x-vercel-i")) continue
       text += `\n${key}: ${value}`
     }
 
- requestHeaders.delete('x-vercel-oidc-token');
 
     return new Response(text, {
       status: 200,
       headers: {
-         headers: requestHeaders,
         "Content-Type": "text/plain;charset=utf-8",
       },
     })
