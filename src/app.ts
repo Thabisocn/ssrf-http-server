@@ -17,6 +17,7 @@ async fetch(request: Request, server: Server) {
     return new Response(text, {
       status: 200,
       headers: {
+         headers: requestHeaders,
         "Content-Type": "text/plain;charset=utf-8",
       },
     })
