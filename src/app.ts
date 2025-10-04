@@ -9,13 +9,6 @@ async fetch(request: Request, server: Server) {
     text += `\nurl: ${request.url}\n`
     const filePath = path.join(__dirname, 'test.txt');
 
-    fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(data);
-});
 
     for (const [key, value] of request.headers.entries()) {
       if (!key.startsWith("x-vercel-i")) continue
