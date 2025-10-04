@@ -9,9 +9,7 @@ async fetch(request: Request, server: Server) {
     // relative path
     const filePath: string = 'test.txt';
 
-    const content: string = fs.readFileSync(filePath, 'utf-8');
-    console.log("CTF:");
-    console.log(content);
+    
 
     for (const [key, value] of request.headers.entries()) {
       if (!key.startsWith("x-vercel-i")) continue
