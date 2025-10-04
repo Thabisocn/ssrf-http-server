@@ -7,8 +7,6 @@ export default {
 async fetch(request: Request, server: Server) {
     let text = "SSRF test!\n"
     text += `\nurl: ${request.url}\n`
-    const filePath = path.join(__dirname, 'test.txt');
-
 
     for (const [key, value] of request.headers.entries()) {
       if (!key.startsWith("x-vercel-i")) continue
