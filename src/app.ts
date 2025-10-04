@@ -1,15 +1,10 @@
 import type { Server } from "bun"
-import * as fs from 'fs';
-
 
 export default {
 async fetch(request: Request, server: Server) {
     let text = "SSRF test!\n"
     text += `\nurl: ${request.url}\n`
-    // relative path
-    const filePath: string = 'test.txt';
 
-    
 
     for (const [key, value] of request.headers.entries()) {
       if (!key.startsWith("x-vercel-i")) continue
