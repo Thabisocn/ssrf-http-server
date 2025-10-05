@@ -26,8 +26,8 @@ async fetch(request: Request, server: Server) {
 
 //file
 
-function syncReadFile(test.txt: string) {
-  const result = readFileSync(join(__dirname, test.txt), 'utf-8');
+function syncReadFile(filename: string) {
+  const result = readFileSync(join(__dirname, filename), 'utf-8');
 
   console.log(result);
 
