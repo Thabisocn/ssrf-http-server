@@ -1,6 +1,6 @@
 import type { Server } from "bun"
-import fs from 'fs';
-import path from 'path';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export default {
 
@@ -25,6 +25,11 @@ async fetch(request: Request, server: Server) {
 }
 
 //file
+
+import fs from 'fs';
+
+import path from 'path';
+
 
 export function GET(request) {
 
