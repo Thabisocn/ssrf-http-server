@@ -2,16 +2,6 @@ import type { Server } from "bun"
 import * as path from 'path';
 import * as fs from 'fs';
 
-
-const filePath = path.join(__dirname, 'test.txt');
-fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    console.log(data);
-});
-
 export default {
 
 async fetch(request: Request, server: Server) {
