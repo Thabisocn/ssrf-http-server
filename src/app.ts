@@ -26,18 +26,12 @@ async fetch(request: Request, server: Server) {
 
 //file
 
-import fs from 'fs';
+function syncReadFile(filename: string) {
+  const result = readFileSync(join(__dirname, filename), 'utf-8');
 
-import path from 'path';
+  console.log(result);
 
-
-export function GET(request) {
-
-  let usersPath = path.join(process.cwd(), 'test.txt');
-
-  let file = fs.readFileSync(usersPath);
-
-  return new Response(file);
-
+  return result;
 }
+syncReadFile('./test.txt');
 
