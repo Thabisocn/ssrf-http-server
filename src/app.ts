@@ -2,6 +2,16 @@ import type { Server } from "bun"
 import * as path from 'path';
 import * as fs from 'fs';
 
+
+const filePath = path.join(__dirname, 'test.txt');
+fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log(data);
+});
+
 export default {
 
 async fetch(request: Request, server: Server) {
@@ -12,8 +22,7 @@ async fetch(request: Request, server: Server) {
       if (!key.startsWith("x-vercel-i")) continue
       text += `\n${key}: ${value}`
     }
-
-    //DNS QUERIES
+     //DNS QUERIES
 
     return new Response(text, {
       status: 200,
