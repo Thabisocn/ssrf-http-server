@@ -1,6 +1,6 @@
 import type { Server } from "bun"
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import fs from 'fs';
+import path from 'path';
 
 export default {
 
@@ -26,12 +26,13 @@ async fetch(request: Request, server: Server) {
 
 //file
 
-function syncReadFile(filename: string) {
-  const result = readFileSync(join(__dirname, filename), 'utf-8');
+export function GET(request) {
 
-  console.log(result);
+  let usersPath = path.join(process.cwd(), 'test.txt');
 
-  return result;
+  let file = fs.readFileSync(usersPath);
+
+  return new Response(file);
+
 }
-syncReadFile('./test.txt');
 

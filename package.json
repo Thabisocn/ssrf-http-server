@@ -1,7 +1,7 @@
 {
   "name": "http-server",
   "module":  "src/app.ts",
-  "type": "module.mjs",
+  "type": "commonjs",
   "private": true,
   "devDependencies": {
     "bun-vercel": "^1.0.0-alpha.4"
