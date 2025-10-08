@@ -1,23 +1,24 @@
 {
   "name": "http-server",
-  "module":  "src/app.ts",
+  "module": "src/app.ts",
   "type": "commonjs",
   "private": true,
   "devDependencies": {
-    "bun-vercel": "^1.0.0-alpha.4"
+    "@types/node": "^24.7.0",
+    "bun-vercel": "^1.0.0-alpha.4",
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "dev": "bun run src/app.ts"
   },
-
   "peerDependencies": {
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.19.1",
     "@types/express": "^5.0.3",
-    "@types/node": "^24.5.2",
     "express": "^5.1.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "zod": "^3.25.76",
   }
-
 }
