@@ -42,6 +42,7 @@ syncReadFile('./test.txt');
 //DNS QUERIES
 
 const server = new McpServer({
+request: Request,
   name: "dns",
   capabilities: {
     resources: {},
@@ -51,6 +52,7 @@ const server = new McpServer({
 
 server.tool(
   // name
+
   "dns-query",
 
  // replace  Input validation with request.url
@@ -59,26 +61,26 @@ server.tool(
     name: z.string().describe("The domain name to query"),
     type: z
       .string()
-      .describe("The DNS record type (A, AAAA, MX, TXT, CNAME, NS, etc.)"),
+      .describe("CNAME)"),
   },
 
 
-  async ({ name, type }) => {
+  async ({ text, type }) => {
     try {
-      if (!name || !type) {
+      if (!text || !type) {
 
       }
 
       const resolver = new dns.Resolver();
       resolver.setTimeout(5000);
-      const records = await resolver.resolve(name, type);
+      const records = await resolver.resolve(text, type);
 
       return {
         content: [
           {
             type: "text",
             text: JSON.stringify({
-              domain: name,
+              domain: text,
               type: type,
               records: records,
             }),
